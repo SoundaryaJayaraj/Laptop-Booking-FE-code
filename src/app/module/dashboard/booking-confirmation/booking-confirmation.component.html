@@ -1,0 +1,129 @@
+<app-common-header></app-common-header>
+<accordion class="mainacc">
+  <div class="container-fluid">
+
+    <!-- <accordion-group heading={{centerDataObj.centerName}}> -->
+    <accordion-group [panelClass]="customClass">
+      <span accordion-heading>
+        <i class="fa-solid fa-desktop"></i>
+        <div class="pull-left float-left">{{centerDataObj.centerName}}</div>
+      </span>
+      <div class="row" style="background-color:rgb(253, 221, 221)">
+        <div class="col-lg-6">
+          <table class="table table-borderless">
+
+            <tbody>
+              <tr>
+                <th scope="row">City</th>
+                <td>{{centerDataObj.city}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Country</th>
+                <td>{{centerDataObj.country}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Opening Time</th>
+                <td>{{openingTime}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-lg-6">
+          <table class="table table-borderless">
+
+            <tbody>
+              <tr>
+                <th scope="row">Closing Time</th>
+                <td>{{closingTime}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Contact</th>
+                <td colspan="2">{{centerDataObj.contactPerson}}-{{centerDataObj.contactNum}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </accordion-group>
+    <!-- <accordion-group heading="Customer Info" class="acc2"> -->
+    <accordion-group [panelClass]="customClass2"> 
+      <span accordion-heading>
+        <i class='fa fa-users icon1'></i>
+        <div class=" float-left acc2">Customer Info</div>
+      </span>
+      <div class="row" style="background-color:rgb(211, 209, 250)">
+        <div class="col-lg-6">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <th scope="row">Customer Id</th>
+                <td>{{customerInfoObj.customerId}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Name</th>
+                <td>{{customerInfoObj.userName}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-lg-6">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <th scope="row">Email</th>
+                <td colspan="2">{{customerInfoObj.email}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Mobile No</th>
+                <td colspan="2">{{customerInfoObj.mobileNo}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </accordion-group>
+    <!-- <accordion-group heading="Product Info"> -->
+    <accordion-group [panelClass]="customClass3">
+      <span accordion-heading>
+        <i class="fa-solid fa-chalkboard-user"></i>
+        <div class="pull-left float-left">Product Info</div>
+      </span>
+      <div class="row"  style="background-color:rgb(230, 248, 198)">
+        <div class="col-lg-6">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <th scope="row">Lap Category</th>
+                <td>{{productInfoObj.lapCategory}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Model Type</th>
+                <td>{{productInfoObj.modelType}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Defect</th>
+                <td colspan="2">{{productInfoObj.defectInfo}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-lg-6">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <th scope="row">Appointment Date</th>
+                <td colspan="2">{{appDate}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Appointment Time</th>
+                <td colspan="2">{{appTime}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </accordion-group>
+
+  </div>
+  <app-common-footer></app-common-footer>
+</accordion>

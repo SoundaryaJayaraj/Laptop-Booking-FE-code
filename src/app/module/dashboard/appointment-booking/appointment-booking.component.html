@@ -1,0 +1,97 @@
+<app-common-header></app-common-header>
+<div class="container-fluid cont1">
+        <!-- Outer Row -->
+        <div class="row justify-content-center text-black">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <!-- 
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-5"> -->
+                <!-- Nested Row within Card Body -->
+                <div class="row mt-5">
+                    <div class="col-lg-6 custom1">
+                        <div class="container1 mt-4">
+                            <h2 class="head text-center"><em>{{centerDataObj.centerName}}</em></h2><br>
+
+                        <table class="table table-borderless ml-5">
+                
+                            <tbody>
+                                <tr>
+                                    <th scope="row">City</th>
+                                    <td>{{centerDataObj.city}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Country</th>
+                                    <td>{{centerDataObj.country}}</td>                                  
+                                  </tr>
+                              <tr>
+                                <th scope="row">Opening Time</th>
+                                <td>{{openingTime}}</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Closing Time</th>
+                                <td>{{closingTime}}</td>
+                               
+                              </tr>
+                              <tr>
+                                <th scope="row">Contact</th>
+                                <td colspan="2">{{centerDataObj.contactPerson}}-{{centerDataObj.contactNum}}</td>
+                                
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 custom2">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-black"><em>Please fill below details!!</em></h1><br>
+                            </div>
+                            <form class="appointmentBookingForm" [formGroup]="appointmentBookingForm">
+
+                                <div class="form-group">
+                                    <input type="lapCategory" class="form-control form-control-user"
+                                        id="exampleInputlapCategory" aria-describedby="lapCategory"
+                                        placeholder="Enter lap Category..." formControlName="lapCategory">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputModelType"
+                                        placeholder=" Model Type" formControlName="modelType">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user"
+                                        id="exampleInputDefectInfo" placeholder=" Defect Info"
+                                        formControlName="defectInfo">
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" class="form-control form-control-user"
+                                        id="exampleInputAppointmentDate" placeholder="YYYY-MM-DD"
+                                        formControlName="appointmentDate">
+                                </div>
+                                <div class="form-group">
+                                    <input type="time" class="form-control form-control-user"
+                                        id="exampleInputAppointmentTime" placeholder="Appointment Time"
+                                        formControlName="appointmentTime">
+                                </div>
+                                <a class="btn btn-primary" id="register" (click)="register()" *ngIf="isSubmitBtnEnable">
+                                    Submit
+                                </a>
+                                <a class="btn btn-primary btn-user btn-block" (click)="onClickUpdate()"
+                                    *ngIf="isUpdateBtnEnable">
+                                    Update
+                                </a>
+                                <div class="p-5">
+                                    <div *ngIf="isAlertNotification"> Succesfully Registered!!</div>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+</div>
+<app-common-footer></app-common-footer>

@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+body{
+    overflow-x: hidden;
+}
+
+.customClass { 
+    background: rgb(250, 233, 233);
+}
+.customClass2 { 
+    background: rgb(230, 229, 250);
+}
+.customClass3 { 
+    background: rgb(238, 250, 217);
+}

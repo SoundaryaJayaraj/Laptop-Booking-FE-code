@@ -1,0 +1,47 @@
+<app-common-header></app-common-header>
+<div class="row custom1">
+  <div class="col-sm-8">
+    <table class="table" border="1">
+      <tr>
+        <th>S.No</th>
+        <th>Appointment Id</th>
+        <th>Lap Category</th>
+        <th>Model Type</th>
+        <th>Defect Info</th>
+        <th>Appointment Date</th>
+        <th>Appointment Time</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let item of listOfAppointments; let i=index" appTextColor>
+        <td>{{i+1}}</td>
+        <td>{{item.appointmentId}}</td>
+        <td>{{item.lapCategory}}</td>
+        <td>{{item.modelType}}</td>
+        <td>{{item.defectInfo}}</td>
+        <td>{{getDateFormat(item)}}</td>
+        <td>{{get12hrsFormat(item)}}</td>
+        <td><button type="button" class="btn btn-primary" style="background-color: #4e73df!important;"
+            (click)="viewMore(item)">View More</button></td>
+      </tr>
+
+    </table>
+  </div>
+  <div class="col-sm-4 custom-text-color" *ngIf="isAppointments">
+    <div id="pdfTable" #pdfTable>
+      <div class="custom-bg-color">
+        <img
+          src="data:image/png;base64,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"
+          class="rounded mx-auto d-block" alt="..."><br>
+        <p class="fs-3">{{customerInfoObj.userName}}, We've got your Appointment</p>
+        <p class="fs-3 fw-bold"> {{appDate}} | {{AppointmentInfoObj?.serviceCenterId?.centerName}}</p><br>
+        <p class="fst-normal text-secondary"> {{AppointmentInfoObj.appointmentDate|date:'fullDate'}}</p>
+        <p class="fst-normal text-secondary">
+          {{AppointmentInfoObj?.serviceCenterId?.city}},{{AppointmentInfoObj?.serviceCenterId?.country}}</p>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" style="background-color: #4e73df!important;"
+      (click)="convetToPDF()">Print</button>
+  </div>
+  <div *ngIf="isMessage"> Appointment Info DownloadedSuccesfully!!</div>
+  <app-common-footer></app-common-footer>
+</div>

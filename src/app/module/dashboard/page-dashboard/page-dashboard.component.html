@@ -1,0 +1,100 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+            <app-common-header></app-common-header>
+            <!-- Topbar -->
+            <app-header (event)="recieveList($event)" (event2)="appointmentList($event)"></app-header> <br><br>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+
+                <!-- Content Row -->
+
+                <div class="row">
+
+                    <table class="table table-responsive" border="1" *ngIf="isServiceCenter">
+                        <tr>
+                            <th>S.No</th>
+                            <th>Service Center Id</th>
+                            <th>Center Name</th>
+                            <th>Contact Person</th>
+                            <th>Contact Number</th>
+                            <th>E-mail</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Country</th>
+                            <th>Opening Time</th>
+                            <th>Closing Time</th>
+                            <th>Slot Capacity</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr *ngFor="let item of listOfServiceCenters; let i=index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.serviceCenterId}}</td>
+                            <td>{{item.centerName}}</td>
+                            <td>{{item.contactPerson}}</td>
+                            <td>{{item.contactNum}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.city}}</td>
+                            <td>{{item.state}}</td>
+                            <td>{{item.country}}</td>
+                            <td>{{get12hrsFormatOpeningTime(item)}}</td>
+                            <td>{{get12hrsFormatClosingTime(item)}}</td>
+                            <td>{{item.slotCapacity}}</td>
+                            <td><button type="button" class="btn btn-primary"
+                                    style="background-color: #4e73df!important;" (click)="BookNow(item)">Book
+                                    Now</button></td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+            <div class="row">
+                <table class="table table-responsive" border="1" *ngIf="isAppointmentList">
+                    <tr>
+                        <th>S.No</th>
+                        <th>Appointment Id</th>
+                        <th>Lap Category</th>
+                        <th>Model Type</th>
+                        <th>Defect Info</th>
+                        <th>Appointment Date</th>
+                        <th>Appointment Time</th>
+
+                    </tr>
+                    <tr *ngFor="let item of listOfAppointments; let i=index">
+                        <td>{{i+1}}</td>
+                        <td>{{item.appointmentId}}</td>
+                        <td>{{item.lapCategory}}</td>
+                        <td>{{item.modelType}}</td>
+                        <td>{{item.defectInfo}}</td>
+                        <td>{{item.appointmentDate}}</td>
+                        <td>{{item.appointmentTime}}</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <!-- Footer -->
+            <app-common-footer></app-common-footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+</div>
